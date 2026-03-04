@@ -28,8 +28,8 @@ This is why we use a multi-stage process: use the fast bi-encoder to find the "h
 **Diagram: The Re-ranking Pipeline**
 ```mermaid
 graph TD
-    A[User Query] --> B{1. Retriever (Fast Bi-Encoder)};
-    B -- Top 50-100 Candidates --> C{2. Re-ranker (Accurate Cross-Encoder)};
+    A[User Query] --> B{1. Retriever - Fast Bi-Encoder};
+    B -- Top 50-100 Candidates --> C{2. Re-ranker - Accurate Cross-Encoder};
     subgraph Re-ranker Step
       direction LR
       C_D[One Document]
@@ -40,7 +40,7 @@ graph TD
     A --> C_Q;
     C_D --> C_LLM;
     C_Q --> C_LLM
-    C -- Top 3-5 Docs --> D{3. Generator (Main LLM)};
+    C -- Top 3-5 Docs --> D{3. Generator - Main LLM};
     A --> D;
     D --> E[Final Answer];
 ```
