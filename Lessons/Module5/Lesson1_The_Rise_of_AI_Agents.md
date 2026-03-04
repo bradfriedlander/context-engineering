@@ -62,11 +62,11 @@ graph TD
     A[User Goal] --> B{Planner};
     B -- Thought --> C["Thought: I need to find where Apple was founded. I'll use the search tool.<br/><b>Action: search('where was Apple founded?')</b>"];
     C --> D[Tool Execution];
-    D -- Observation --> E[Observation: Result is "Cupertino, CA"];
+    D -- Observation --> E["Observation: Result is 'Cupertino, CA'"];
     E --> B;
     B -- Thought --> F["Thought: Now I have the city. I'll use the weather tool.<br/><b>Action: get_weather('Cupertino, CA')</b>"];
     F --> D;
-    D -- Observation --> G[Observation: Result is "75°F and sunny."];
+    D -- Observation --> G["Observation: Result is '75°F and sunny.'"];
     G --> B;
     B -- Thought --> H["Thought: I have the final answer. I can respond to the user."];
     H --> I[Final Response];
