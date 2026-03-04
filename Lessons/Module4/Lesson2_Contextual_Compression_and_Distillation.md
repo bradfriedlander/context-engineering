@@ -49,7 +49,7 @@ graph TD
     D_C --> D_LLM;
     D_Q --> D_LLM;
     D_LLM --> E[Compressed Snippets];
-    E --> F{3. Generator (Main LLM)};
+    E --> F{3. Generator - Main LLM};
     A --> F;
     F --> G[Final Answer];
 ```
