@@ -72,17 +72,17 @@ A function call always involves two distinct calls to the LLM.
 **Diagram: The Function Calling Loop**
 ```mermaid
 graph TD
-    A[User: "What's the weather in Boston?"] --> B[1. LLM Call #1];
+    A["User: 'What''s the weather in Boston?'"] --> B[1. LLM Call #1];
     subgraph LLM Call #1
         B_P[Prompt: User query + Tool definitions]
     end
-    B --> C[LLM Response: "Call get_weather(location='Boston, MA')"];
+    B --> C["LLM Response: Call get_weather(location='Boston, MA')"];
     C --> D{Your Code Executes the Function};
-    D -- Function Result: "32°F" --> E[2. LLM Call #2];
+    D -- "Function Result: '32°F'" --> E[2. LLM Call #2];
     subgraph LLM Call #2
         E_P[Prompt: Original query + Tool call request + Function Result]
     end
-    E --> F[LLM Response: "The weather in Boston is 32°F."];
+    E --> F["LLM Response: 'The weather in Boston is 32°F.'"];
     F --> G[Show to User]
 ```
 
